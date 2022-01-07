@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CDN Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+  <!-- StyleSheet CSS -->
+  <link rel="stylesheet" href="src/styles.css">
+  <title>Covid-19</title>
+</head>
+<body>
+  <section id="home">
+    <!-- Header -->
+    <header>
+      <a href="#"><img src="img/logo-covid.png" class="logo"></a>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#data">Data</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </header>
+
+    <!-- Banner -->
+    <div class="content">
+      <div class="textBox">
+        <h2>Stay <span>Safe</span>, Stay <span>Healthy</span></h2>
+        <p>Novel coronavirus (2019-nCov) adalah virus baru penyebab penyakit saluran pernafasan. Virus ini berasal dari Tiongkok. Novel coronavirus merupakan satu keluarga dengan virus penyebab SARS dan MERS</p>
+        <a href="#contact" class="seeMore">See More</a>
+      </div>
+      <div class="imgBox">
+        <img src="img/banner-covid.jpg">
+      </div>
+    </div>
+
+    <!-- Float Langkah Pencegahan -->
+    <ul class="pencegahan">
+      <li class="cegah"><img src="img/cuci.png"></li>
+      <li class="cegah"><img src="img/hand-sanitizer.png"></li>
+      <li class="cegah"><img src="img/masker.png"></li>
+      <li class="cegah"><img src="img/anti-salam.png" alt=""></li>
+    </ul>
+
+    <!-- Float Data Covid Case Indonesia -->
+    <ul class="kasus">
+      <li class="case rounded">
+        <div class="icon"><img src="img/patient.png"></div>
+        <div class="positif">0</div>
+      </li>
+      <li class="case rounded">
+        <div class="icon"><img src="img/healthy.png"></div>
+        <div class="sembuh">0</div>
+      </li>
+      <li class="case rounded">
+        <div class="icon"><img src="img/dead.png"></div>
+        <div class="meninggal">0</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Data Covid-19 -->
+  <section id="data">
+    <div class="container">
+      <header>
+        <h1>Penyebaran Covid di Indonesia</h1>
+      </header>
+
+      <div class="row">
+        <!-- Chart JS -->
+        <div class="col-8">
+          <canvas id="myChart"></canvas>
+        </div>
+        <!-- Chart Control Form -->
+        <div class="col-4">
+          <h4 class="jenisForm">Tipe Chart:</h4>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" id="line" value="line" name="radioButtonChart" checked>
+            <label class="form-check-label" for="line">Line</label>
+          </div>
+          <!--  -->
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" id="bar" value="bar" name="radioButtonChart">
+            <label class="form-check-label" for="bar">Bar</label>
+          </div>
+          <h4 class="jenisForm">Sort by :</h4>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" id="byCase" value="byCase" name="radioButtonSort" checked>
+            <label class="form-check-label" for="byCase">Kasus(Desc)</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" id="byProvince" value="byProvince" name="radioButtonSort">
+            <label class="form-check-label" for="byProvince">Urutan Provinsi</label>
+          </div>
+        </div>
+      </div>
+      <!-- Dropdown Dunia -->
+      <div class="row">
+        <div class="col-3 border rounded border-danger">
+          <h2>Search Negara (Covid-19)</h2>
+          <select id="mySelect" class="col-12 mb-1"></select>
+        </div>
+        
+        
+        <div class="col-3 border rounded border-danger">
+          <div class="caseDunia">
+            <h2 class="text-danger text-center mt-2">Positif</h2>
+            <h3 class="text-dark text-center positifCountry positifNegara">0</h3>
+
+          </div>
+        </div>
+        <div class="col-3 border rounded border-success">
+          <div class="caseDunia">
+            <h2 class="text-success text-center mt-2">Sembuh</h2>
+            <h3 class="text-dark text-center negatifCountry">0</h3>
+          </div>
+        </div>
+        <div class="col-3 border rounded border-dark">
+          <div class="caseDunia">
+            <h2 class="text-dark text-center mt-2">Meninggal</h2>
+            <h3 class="text-dark text-center meninggalCountry">0</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Team Data -->
+  <section id="contact" class="row">
+    <div class="container">
+      <header>
+        <h1>Team Anti <span>Ampas</span></h2>
+      </header>
+      <div id="footer" class="container">
+  
+      </div>
+      <footer class="col-12 container p-4 mb-4">
+        <div class="container-fluid row justify-content-md-center">
+          <div class="col-6 text-center">
+            Copyright ©2021 Team AntiAmpas. All Rights Reserved
+          </div> 
+          <div class="col-6 text-center">
+            Bussiness : gilbertjeremiawelly@gmail.com
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    
+  </section>
+  
+  
+  
+  <!-- React.js CDN & Babel -->
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script> 
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  <script src="  https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  
+  <!-- Numeral.js CDN -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+
+  <!-- JQuery.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- File React -->
+  <script type="text/babel" src="src/Component/Team.jsx"></script>
+
+  <!-- File JavaScript -->
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

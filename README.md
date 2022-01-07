@@ -1,1 +1,1 @@
-# CovidWebsite
+# Covid-19
